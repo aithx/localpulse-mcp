@@ -4,7 +4,10 @@ MCP server for **value-first cold outreach** to local service businesses (HVAC, 
 
 Part of the [[money-maker]] validation sprint — Archetype B automated via MCP distribution.
 
-## Quick start
+## Live
+
+- **Landing:** https://landing-five-eta-77.vercel.app
+- **GitHub:** _(pending auth — run `gh auth login` then push)_
 
 ```bash
 npm install
