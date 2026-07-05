@@ -20,12 +20,21 @@ npm start   # stdio MCP server
 
 ### Cursor / Claude Desktop config
 
+Clone and build first:
+
+```bash
+git clone https://github.com/aithx/localpulse-mcp.git
+cd localpulse-mcp && npm install && npm run build
+```
+
+Then add to your MCP config (replace `<clone-path>` with where you cloned the repo):
+
 ```json
 {
   "mcpServers": {
     "localpulse": {
       "command": "node",
-      "args": ["/Users/aith/Desktop/Projects/outreach-mcp/dist/index.js"]
+      "args": ["<clone-path>/dist/index.js"]
     }
   }
 }
