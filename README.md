@@ -7,7 +7,9 @@ Part of the [[money-maker]] validation sprint — Archetype B automated via MCP 
 ## Live
 
 - **Landing:** https://landing-five-eta-77.vercel.app
-- **GitHub:** pending — run auth + push (see below)
+- **GitHub:** https://github.com/aithx/localpulse-mcp
+
+## Quick start
 
 ```bash
 npm install
