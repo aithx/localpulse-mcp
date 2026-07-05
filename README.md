@@ -7,7 +7,7 @@ Part of the [[money-maker]] validation sprint — Archetype B automated via MCP 
 ## Live
 
 - **Landing:** https://landing-five-eta-77.vercel.app
-- **GitHub:** _(pending auth — run `gh auth login` then push)_
+- **GitHub:** pending — run auth + push (see below)
 
 ```bash
 npm install
