@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocalPulse MCP — AI outreach for local service businesses</title>
+  <meta name="description" content="MCP server that generates value-first cold emails, scores leads, and builds outreach sequences for HVAC, plumbing, and local trades." />
+  <style>
+    :root {
+      --bg: #0a0f14;
+      --surface: #121a22;
+      --border: #1e2a36;
+      --text: #e8eef4;
+      --muted: #8fa3b8;
+      --accent: #3dd68c;
+      --accent-dim: #2a9d63;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-dim);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .lead { font-size: 1.125rem; color: var(--muted); margin-bottom: 2rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 { font-size: 1rem; margin-bottom: 0.75rem; }
+    ul { padding-left: 1.25rem; color: var(--muted); }
+    li { margin-bottom: 0.35rem; }
+    .tools { display: grid; gap: 0.75rem; margin-top: 1rem; }
+    .tool {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: ui-monospace, monospace;
+      font-size: 0.875rem;
+    }
+    .tool span { color: var(--accent); }
+    form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
+    input[type="email"] {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+    }
+    input[type="email"]:focus { outline: 2px solid var(--accent-dim); border-color: transparent; }
+    button {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      padding: 0.875rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: var(--accent-dim); color: var(--text); }
+    .pricing { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    .tier {
+      flex: 1;
+      min-width: 140px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .tier strong { display: block; font-size: 1.25rem; margin-bottom: 0.25rem; }
+    .tier small { color: var(--muted); font-size: 0.8rem; }
+    footer { margin-top: 3rem; font-size: 0.875rem; color: var(--muted); }
+    .success { display: none; color: var(--accent); margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="badge">Validation sprint — early access</div>
+    <h1>LocalPulse MCP</h1>
+    <p class="lead">
+      AI outreach tools for local service businesses — cold emails, lead scoring, and review-gap analysis,
+      built as an MCP server for Cursor, Claude, and any MCP client.
+    </p>
+
+    <div class="card">
+      <h2>4 tools, zero API keys to start</h2>
+      <div class="tools">
+        <div class="tool"><span>generate_cold_email</span> — value-first email for HVAC, plumbing, etc.</div>
+        <div class="tool"><span>score_local_lead</span> — prioritize who to contact first</div>
+        <div class="tool"><span>build_email_sequence</span> — 3-touch drip (day 0, 3, 7)</div>
+        <div class="tool"><span>analyze_reviews_gap</span> — reputation angle + outreach hook</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Who it's for</h2>
+      <ul>
+        <li>Agencies selling AI receptionist / review automation to local trades</li>
+        <li>Solo founders doing cold outreach from anywhere (USD, global)</li>
+        <li>Anyone building Archetype B local-business products who needs distribution</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Planned pricing</h2>
+      <div class="pricing">
+        <div class="tier"><strong>Free</strong><small>50 tool calls/mo · stdio local</small></div>
+        <div class="tier"><strong>$49/mo</strong><small>Pro · unlimited · hosted MCP</small></div>
+        <div class="tier"><strong>$199/mo</strong><small>Agency · white-label · Apollo sync</small></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Join the waitlist</h2>
+      <p style="color: var(--muted); font-size: 0.95rem;">Get the MCP + validation updates. No spam.</p>
+      <form id="waitlist">
+        <input type="email" id="email" name="email" placeholder="you@agency.com" required />
+        <button type="submit">Join waitlist</button>
+        <p class="success" id="success">You're on the list — we'll email when hosted MCP is ready.</p>
+      </form>
+      <p style="color: var(--muted); font-size: 0.8rem; margin-top: 0.75rem;">
+        Deploy note: connect Formspree or Tally before going live.
+      </p>
+    </div>
+
+    <footer>
+      Built by <a href="#" style="color: var(--accent);">LocalPulse</a> · MCP-first · Validation sprint day 1
+    </footer>
+  </div>
+  <script>
+    const KEY = "localpulse_waitlist";
+    document.getElementById("waitlist").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const list = JSON.parse(localStorage.getItem(KEY) || "[]");
+      if (!list.includes(email)) list.push(email);
+      localStorage.setItem(KEY, JSON.stringify(list));
+      document.querySelector("button").textContent = "Joined ✓";
+      document.getElementById("success").style.display = "block";
+      e.target.reset();
+      console.log("[LocalPulse waitlist]", list);
+    });
+  </script>
+</body>
+</html>
